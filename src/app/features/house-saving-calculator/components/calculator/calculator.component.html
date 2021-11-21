@@ -1,1 +1,30 @@
-<p>calculator works!</p>
+<main class="calculator card">  
+    <div class="title">
+        <img class="title__icon" src= "./assets/img/house.svg" width="64" height="64" aria-hidden="true">
+        <div>
+            <h1 class="typography--heading-small">Buy a house</h1>
+            <p class="typography--paragraph">Saving goal</p>
+        </div>
+    </div>  
+    <form class="form" [formGroup]="calculatorForm">
+        <div class="form__field">
+            <label class="typography--description" for="amount">Total amount</label>
+            <input class="input__field" type="text" name="amount" id="amount"  formControlName="amount">
+        </div>
+        <div class="form__field">
+            <label class="typography--description" for="date">Reach goal by</label>
+            <input class="input__field" type="text" name="date" id="date" formControlName="date">
+        </div>
+    </form>
+    
+    <div class="information card--small">
+        <div class="information__amount flex-row">
+            <p class="typography--subittle">Monthly amount</p>
+            <p class="typography--heading-medium">$25,000</p>
+        </div>
+        <div class="information__caption card--dark">
+            <p class="typography--caption">You’re planning <b class="typography--caption-high-empashis">48 monthly deposits</b> to reach your <b class="typography--caption-high-empashis">$25,000</b> goal by <b class="typography--caption-high-empashis">October 2020</b>.</p>
+        </div>
+    </div>
+    <app-button text="Confirm"></app-button>
+</main>

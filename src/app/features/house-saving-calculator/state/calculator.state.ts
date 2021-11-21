@@ -1,24 +1,39 @@
 import { Injectable } from '@angular/core';
-import { State, Action, StateContext } from '@ngxs/store';
-import { CalculatorAction } from './calculator.actions';
+import { State, Action, StateContext, Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { MonthlySaving } from '../interfaces';
+import { CalculatorService } from '../services/calculator.service';
+import { CalculateMonthlySaving } from './calculator.actions';
 
 export class CalculatorStateModel {
-  public items: string[] = []
+    amount: string = "";
+    totalMonths: number = 0;
 }
 
 const defaults = {
-  items: []
+    amount: "",
+    totalMonths: 0
 };
 
 @State<CalculatorStateModel>({
   name: 'calculator',
-  defaults
+  ...defaults
 })
 @Injectable()
 export class CalculatorState {
-  @Action(CalculatorAction)
-  add({ getState, setState }: StateContext<CalculatorStateModel>, { payload }: CalculatorAction) {
+
+  constructor(
+    private calculatorService: CalculatorService
+    ) { }
+
+  @Action(CalculateMonthlySaving)
+  calculateMonthlySaving({ getState, setState }: StateContext<CalculatorStateModel>, { payload }: CalculateMonthlySaving) {
     const state = getState();
-    setState({ items: [ ...state.items, payload ] });
+    const ret = this.calculatorService.calculateMonthlySaving(payload);
+    
+    return setState({ 
+      ...state,
+      ...ret
+    });
   }
 }

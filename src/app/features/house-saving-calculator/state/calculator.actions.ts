@@ -1,4 +1,6 @@
-export class CalculatorAction {
-  static readonly type = '[Calculator] Add item';
-  constructor(public payload: string) { }
+import { HousePlanning } from "../interfaces";
+
+export class CalculateMonthlySaving {
+  static readonly type = '[Calculator] Calculate Monthly Saving';
+  constructor(public payload: HousePlanning) { }
 }

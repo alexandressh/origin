@@ -1,16 +1,6 @@
 import { Injectable } from '@angular/core';
 import Decimal from 'decimal.js';
-
-export interface MonthlySaving {
-  amount: string;
-  totalMonths: number;
-}
-
-export interface HousePlanning {
-  totalAmount: string;
-  endDateYear: number;
-  endMonth: number;
-}
+import { HousePlanning, MonthlySaving } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'

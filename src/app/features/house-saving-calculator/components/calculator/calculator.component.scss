@@ -1,0 +1,104 @@
+.calculator {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    margin-bottom: 28px;
+
+    &__icon {
+        margin-right: 16px;
+    }
+}
+
+.form {
+    display: flex;
+    margin-bottom: 24px;
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8px;
+        margin-right: 8px;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.information {
+    margin-bottom: 56px;
+
+    &__amount {
+        padding: 32px 32px 24px;
+    }
+
+    &__caption {
+        padding: 24px 32px;
+    }
+}
+
+.input {
+    &--text {
+
+    }
+
+    &__field {
+        font-family: 'Rubik', sans-serif;
+        background: #FFFFFF;
+        border: 1px solid #E9EEF2;
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: #4D6475;
+        padding: 13px;
+        width: 100%;
+    }
+}
+
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 16px 32px rgba(30, 42, 50, 0.08);
+    border-radius: 8px;
+    padding: 35px 40px 40px;
+
+    &--small {
+        background: #FFFFFF;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #F4F8FA;
+        
+    }
+
+    &--dark {
+        background: #F4F8FA;
+    }
+}
+
+.flex {
+    &-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+

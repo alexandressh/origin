@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CalculatorService, HousePlanning } from './calculator.service';
+import { HousePlanning } from '../interfaces';
+import { CalculatorService } from './calculator.service';
 
 fdescribe('CalculatorService', () => {
   let service: CalculatorService;

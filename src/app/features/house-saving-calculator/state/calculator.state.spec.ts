@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { NgxsModule, Store } from '@ngxs/store';
 import { CalculatorState } from './calculator.state';
-import { CalculatorAction } from './calculator.actions';
+import { CalculateMonthlySaving } from './calculator.actions';
 
 describe('Calculator actions', () => {
   let store: Store;
@@ -14,7 +14,7 @@ describe('Calculator actions', () => {
   }));
 
   it('should create an action and add an item', () => {
-    store.dispatch(new CalculatorAction('item-1'));
+    store.dispatch(new CalculateMonthlySaving('item-1'));
     store.select(state => state.calculator.items).subscribe((items: string[]) => {
       expect(items).toEqual(jasmine.objectContaining([ 'item-1' ]));
     });

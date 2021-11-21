@@ -1,0 +1,16 @@
+:host {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    background: #1B31A8;
+    border-radius: 32px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 18px 128px;
+}

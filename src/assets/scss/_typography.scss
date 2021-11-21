@@ -1,0 +1,80 @@
+.typography {
+    &--subittle {
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: normal;
+        color: #1E2A32;
+    }
+
+    &--subtitle-semibold {
+        font-weight: 600;
+    }
+
+    &--heading {
+
+    }
+
+    &--heading-medium {
+        font-family: 'Rubik', sans-serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 38px;
+        color: #0079FF;
+    }
+
+    &--heading-small {
+        font-family: 'Rubik', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: #1E2A32;
+    }
+
+    &--paragraph {
+        font-family: 'Work Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        color: #708797;
+    }
+
+    &--description {
+        font-family: 'Work Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 150%;
+        color: #1E2A32;
+    }
+
+    &--caption {
+        font-family: 'Work Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: #1C1E1F;
+    }
+
+    &--caption-high-empashis {
+        font-family: 'Work Sans', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: #1C1E1F;
+    }
+}
+
+.brand {
+    &--primary {
+        color: #1B31A8;
+    }
+
+    &--secondary {
+        color: #0079FF;
+    }
+}
