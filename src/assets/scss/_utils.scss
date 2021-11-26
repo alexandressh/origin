@@ -1,0 +1,21 @@
+.flex {
+    &-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.spacing {
+    &__xs {
+        margin-bottom: 4px;
+    }
+}

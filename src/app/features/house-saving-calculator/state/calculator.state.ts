@@ -28,7 +28,6 @@ export class CalculatorState {
   calculateMonthlySaving({ getState, setState }: StateContext<CalculatorStateModel>, { payload }: CalculateMonthlySaving) {
     const state = getState();
     const ret = this.calculatorService.calculateMonthlySaving(payload);
-    console.log(payload)
     
     return setState({ 
       ...state,

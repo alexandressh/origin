@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HouseSavingCalculatorPageComponent } from './house-saving-calculator-page/house-saving-calculator-page.component';
 import { RouterModule } from '@angular/router';
 import { HouseSavingCalculatorModule } from "@features/house-saving-calculator/house-saving-calculator.module"
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { HouseSavingCalculatorModule } from "@features/house-saving-calculator/h
   ],
   imports: [
     CommonModule,
+    SharedModule,
     HouseSavingCalculatorModule,
     RouterModule.forChild([{
       path: '',

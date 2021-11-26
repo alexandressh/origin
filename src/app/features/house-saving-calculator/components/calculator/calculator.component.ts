@@ -10,25 +10,21 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.scss']
+  styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent implements OnInit {
   @Select(CalculatorState) monthlySaving$!: Observable<any>;
 
   calculatorForm = new FormGroup({
     date: new FormControl(moment().add(1, 'month')),
-    amount: new FormControl(1000)
+    amount: new FormControl(1000),
   });
 
-  constructor(
-    private store: Store,
-    private decimalPipe: DecimalPipe
-  ) {
-   }
+  constructor(private store: Store, private decimalPipe: DecimalPipe) {}
 
   ngOnInit(): void {
     this.watchForFormChanges();
-    this.calculatorForm.get('amount')?.setValue(1000)
+    this.calculatorForm.get('amount')?.setValue(1000);
   }
 
   get amount(): string {
@@ -45,20 +41,19 @@ export class CalculatorComponent implements OnInit {
   }
 
   get year(): string {
-    return this.date.format('YYYY')
+    return this.date.format('YYYY');
   }
 
   addMonth(value: number): void {
     const newDate = this.date.clone().add(value, 'month');
     const isFuture = newDate.isAfter(moment(), 'month');
-    console.log(newDate.format(), this.date.format(), isFuture)
-    if(isFuture) {
-      this.calculatorForm.get('date')?.setValue(newDate)
+    if (isFuture) {
+      this.calculatorForm.get('date')?.setValue(newDate);
     }
   }
 
   updateMonth(e: KeyboardEvent) {
-    const key = e.key;   
+    const key = e.key;
 
     if (key === 'ArrowRight') {
       this.addMonth(1);
@@ -75,17 +70,20 @@ export class CalculatorComponent implements OnInit {
   }
 
   private watchForFormChanges() {
-    this.calculatorForm.valueChanges.subscribe(formValues => this.onDateOrAmountChange(formValues))
+    this.calculatorForm.valueChanges.subscribe((formValues) =>
+      this.onDateOrAmountChange(formValues)
+    );
   }
 
-  private onDateOrAmountChange(formValues: {amount: string, date: moment.Moment}) {
-    console.log(formValues.amount, formValues.date.year())
+  private onDateOrAmountChange(formValues: {
+    amount: string;
+    date: moment.Moment;
+  }) {
     const payload = {
       totalAmount: formValues.amount,
       endDateYear: formValues.date.year(),
-      endMonth: formValues.date.month()
-    }
+      endMonth: formValues.date.month(),
+    };
     this.store.dispatch([new CalculateMonthlySaving(payload)]);
   }
-
 }

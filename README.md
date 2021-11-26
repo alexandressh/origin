@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+"we stand on the shoulders of giants"
+
+Structure kindly "provided" by:
+https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d
+
+Creating a component that accepts form control:
+https://medium.com/joolsoftware/creating-a-custom-formcontrol-in-angular-da92f2f47733
