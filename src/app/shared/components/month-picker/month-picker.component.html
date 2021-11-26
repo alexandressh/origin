@@ -7,6 +7,7 @@
 >
   <button
     class="datepicker__icon"
+    id="decreaseMonth"
     (click)="addMonth(-1)"
     aria-label="decrease month"
   >
@@ -26,11 +27,12 @@
     </svg>
   </button>
   <div class="datepicker__date">
-    <p class="typography--paragraph-semi-bold">{{ month }}</p>
-    <span class="typography--paragraph">{{ year }}</span>
+    <p id="month" class="typography--paragraph-semi-bold">{{ month }}</p>
+    <span id="year" class="typography--paragraph">{{ year }}</span>
   </div>
   <button
     class="datepicker__icon"
+    id="increaseMonth"
     (click)="addMonth(1)"
     aria-label="increase month"
   >

@@ -12,8 +12,11 @@ export class CalculatorService {
   calculateMonthlySaving(housePlanning: HousePlanning): MonthlySaving {
     const totalMonths = this.monthDiff(new Date(), new Date(housePlanning.endDateYear, housePlanning.endMonth))
     const division = Decimal.div(housePlanning.totalAmount, totalMonths);
-    const amount = division.toDecimalPlaces(2, Decimal.ROUND_FLOOR).toString();
-
+    let amount = "0";
+    if (division.isFinite()) {
+      amount =  division.toDecimalPlaces(2, Decimal.ROUND_FLOOR).toString();
+    }
+    
     return {
       amount,
       totalMonths

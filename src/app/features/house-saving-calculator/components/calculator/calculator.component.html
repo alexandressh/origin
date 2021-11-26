@@ -36,10 +36,10 @@
     <div class="information card--small">
         <div class="information__amount flex-row">
             <p class="typography--subittle">Monthly amount</p>
-            <p class="typography--heading-medium">${{(monthlySaving$ | async)?.amount | number}}</p>
+            <p id="monthlyAmount" class="typography--heading-medium">${{(monthlySaving$ | async)?.amount | number}}</p>
         </div>
         <div class="information__caption card--dark">
-            <p class="typography--caption">You’re planning <b class="typography--caption-high-empashis">{{(monthlySaving$ | async)?.totalMonths}} monthly deposits</b> to reach your <b class="typography--caption-high-empashis">${{amount}}</b> goal by <b class="typography--caption-high-empashis">{{month}} {{year}}</b>.</p>
+            <p id="overview" class="typography--caption">You’re planning <b class="typography--caption-high-empashis">{{(monthlySaving$ | async)?.totalMonths}} monthly deposits</b> to reach your <b class="typography--caption-high-empashis">${{amount}}</b> goal by <b class="typography--caption-high-empashis">{{month}} {{year}}</b>.</p>
         </div>
     </div>
     <button class="btn">Confirm</button>

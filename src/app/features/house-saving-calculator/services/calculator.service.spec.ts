@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HousePlanning } from '../interfaces';
 import { CalculatorService } from './calculator.service';
 
-fdescribe('CalculatorService', () => {
+describe('CalculatorService', () => {
   let service: CalculatorService;
 
   beforeEach(() => {

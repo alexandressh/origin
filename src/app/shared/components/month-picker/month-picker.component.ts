@@ -50,7 +50,7 @@ export class MonthPickerComponent implements OnInit, ControlValueAccessor {
   addMonth(value: number): void {
     const newDate = this.date.clone().add(value, 'month');
     const isFuture = newDate.isAfter(moment(), 'month');
-
+    console.log(isFuture, moment().format());
     if(isFuture) {
       this.date = newDate;
       this.onChange(newDate);
