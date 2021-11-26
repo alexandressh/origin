@@ -18,6 +18,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Next Features:
+
+- Add animations/transitions, so ux can be improved
+- Refactor /assets/scss, some styles over there are too specific
+
 ## we stand on the shoulders of giants
 
 Folder structure kindly "provided" by:
