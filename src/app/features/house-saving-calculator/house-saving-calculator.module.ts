@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { NgxsModule } from '@ngxs/store';
 import { CalculatorState } from './state/calculator.state';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
-
+import { NgxCurrencyModule } from 'ngx-currency';
 
 
 @NgModule({
@@ -15,11 +15,13 @@ import { SharedModule } from '@shared/shared.module';
   exports: [
     CalculatorComponent
   ],
+  providers: [DecimalPipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
+    NgxCurrencyModule,
     NgxsModule.forFeature([CalculatorState]),
   ]
 })

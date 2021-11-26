@@ -1,9 +1,18 @@
 .typography {
     &--subittle {
-        font-size: 20px;
-        line-height: 120%;
+        font-family: 'Work Sans', sans-serif;
+        
         font-weight: normal;
         color: #1E2A32;
+
+        font-size: 18px;
+        line-height: 120%;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 20px;
+            line-height: 120%;
+        }
+
     }
 
     &--subtitle-semibold {
@@ -16,38 +25,83 @@
 
     &--heading-medium {
         font-family: 'Rubik', sans-serif;
-        font-size: 32px;
         font-style: normal;
         font-weight: 500;
-        line-height: 38px;
+        font-size: 24px;
+        line-height: 120%;
         color: #0079FF;
+
+
+        @media only screen and (min-width: 768px) {
+            font-weight: 500;
+            line-height: 38px;
+        }
     }
 
     &--heading-small {
         font-family: 'Rubik', sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 120%;
         color: #1E2A32;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 24px;
+            line-height: 120%;
+        }
+    }
+
+    &--heading-small-medium-emphasis {
+        font-family: 'Rubik', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        color: #1E2A32;
+
+        @media only screen and (min-width: 768px) {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 120%;
+        }
     }
 
     &--paragraph {
         font-family: 'Work Sans', sans-serif;
         font-style: normal;
         font-weight: normal;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 150%;
         color: #708797;
+        
+        @media only screen and (min-width: 768px) {
+            font-size: 16px;
+            line-height: 150%;
+        }
+    }
+
+    &--paragraph-semi-bold {
+        font-family: 'Work Sans', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: #1E2A32;
     }
 
     &--description {
         font-family: 'Work Sans', sans-serif;
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 150%;
         color: #1E2A32;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 14px;
+            line-height: 21px;
+        }
     }
 
     &--caption {

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { State, Action, StateContext, Select } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { MonthlySaving } from '../interfaces';
+import { State, Action, StateContext } from '@ngxs/store';
 import { CalculatorService } from '../services/calculator.service';
 import { CalculateMonthlySaving } from './calculator.actions';
 
@@ -30,6 +28,7 @@ export class CalculatorState {
   calculateMonthlySaving({ getState, setState }: StateContext<CalculatorStateModel>, { payload }: CalculateMonthlySaving) {
     const state = getState();
     const ret = this.calculatorService.calculateMonthlySaving(payload);
+    console.log(payload)
     
     return setState({ 
       ...state,

@@ -1,29 +1,60 @@
 <main class="calculator card">  
     <div class="title">
         <img class="title__icon" src= "./assets/img/house.svg" width="64" height="64" aria-hidden="true">
-        <div>
-            <h1 class="typography--heading-small">Buy a house</h1>
+        <div class="flex-column">
+            <h1 class="typography--heading-small spacing__xs">Buy a house</h1>
             <p class="typography--paragraph">Saving goal</p>
         </div>
     </div>  
+
     <form class="form" [formGroup]="calculatorForm">
-        <div class="form__field">
-            <label class="typography--description" for="amount">Total amount</label>
-            <input class="input__field" type="text" name="amount" id="amount"  formControlName="amount">
+        <div class="form__field form__first">
+            <label class="typography--description spacing__xs" for="amount">Total amount</label>
+            <div class="input__field input__field--icon input__field--focus-within">
+                <i class="input__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C12.5523 0 13 0.447715 13 1V23C13 23.5523 12.5523 24 12 24C11.4477 24 11 23.5523 11 23V1C11 0.447715 11.4477 0 12 0Z" fill="#CBD5DC"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.31802 5.31802C7.16193 4.47411 8.30653 4 9.5 4H17C17.5523 4 18 4.44772 18 5C18 5.55228 17.5523 6 17 6H9.5C8.83696 6 8.20107 6.26339 7.73223 6.73223C7.26339 7.20107 7 7.83696 7 8.5C7 9.16304 7.26339 9.79893 7.73223 10.2678C8.20107 10.7366 8.83696 11 9.5 11H14.5C15.6935 11 16.8381 11.4741 17.682 12.318C18.5259 13.1619 19 14.3065 19 15.5C19 16.6935 18.5259 17.8381 17.682 18.682C16.8381 19.5259 15.6935 20 14.5 20H6C5.44772 20 5 19.5523 5 19C5 18.4477 5.44772 18 6 18H14.5C15.163 18 15.7989 17.7366 16.2678 17.2678C16.7366 16.7989 17 16.163 17 15.5C17 14.837 16.7366 14.2011 16.2678 13.7322C15.7989 13.2634 15.163 13 14.5 13H9.5C8.30653 13 7.16193 12.5259 6.31802 11.682C5.47411 10.8381 5 9.69347 5 8.5C5 7.30653 5.47411 6.16193 6.31802 5.31802Z" fill="#CBD5DC"/>
+                    </svg>
+                </i>
+                <input 
+                    id="amount"
+                    class="typography--heading-small-medium-emphasis"
+                    formControlName="amount"
+                    [options]="{align : 'left', precision: 2, prefix: '', nullable: false}"
+                    currencyMask 
+                    type="text">
+            </div>
         </div>
-        <div class="form__field">
-            <label class="typography--description" for="date">Reach goal by</label>
-            <input class="input__field" type="text" name="date" id="date" formControlName="date">
+
+        <div class="form__field form__second">
+            <label class="typography--description spacing__xs" for="reachDate">Reach goal by</label>
+            <div class="input__field datepicker" tabindex="0" (keydown)="updateMonth($event)" aria-label="press left to decrease month and right to increase month">
+                <button class="datepicker__icon" (click)="addMonth(-1)" aria-label="decrease month">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L2.41421 7L7.70711 12.2929C8.09763 12.6834 8.09763 13.3166 7.70711 13.7071C7.31658 14.0976 6.68342 14.0976 6.29289 13.7071L0.292893 7.70711C-0.0976311 7.31658 -0.0976311 6.68342 0.292893 6.29289L6.29289 0.292893C6.68342 -0.0976311 7.31658 -0.0976311 7.70711 0.292893Z" fill="#8A9CA9"/>
+                        </svg>                        
+                </button>
+                <div class="datepicker__date" >
+                    <p class="typography--paragraph-semi-bold">{{month}}</p>
+                    <span class="typography--paragraph">{{year}}</span>
+                </div>
+                <button class="datepicker__icon"  (click)="addMonth(1)" aria-label="increase month">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L7.70711 6.29289C8.09763 6.68342 8.09763 7.31658 7.70711 7.70711L1.70711 13.7071C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929L5.58579 7L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="#8A9CA9"/>
+                        </svg>                        
+                </button>
+            </div>
         </div>
     </form>
     
     <div class="information card--small">
         <div class="information__amount flex-row">
             <p class="typography--subittle">Monthly amount</p>
-            <p class="typography--heading-medium">$25,000</p>
+            <p class="typography--heading-medium">${{(monthlySaving$ | async)?.amount | number}}</p>
         </div>
         <div class="information__caption card--dark">
-            <p class="typography--caption">You’re planning <b class="typography--caption-high-empashis">48 monthly deposits</b> to reach your <b class="typography--caption-high-empashis">$25,000</b> goal by <b class="typography--caption-high-empashis">October 2020</b>.</p>
+            <p class="typography--caption">You’re planning <b class="typography--caption-high-empashis">{{(monthlySaving$ | async)?.totalMonths}} monthly deposits</b> to reach your <b class="typography--caption-high-empashis">${{amount}}</b> goal by <b class="typography--caption-high-empashis">{{month}} {{year}}</b>.</p>
         </div>
     </div>
     <app-button text="Confirm"></app-button>
